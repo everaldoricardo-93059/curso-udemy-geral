@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array multidimensional</title>
+</head>
+<body>
+    <h1>Array multidimensional</h1>
+    <p>Obs: basicamente podemos colocar dentro dos imdices dos nossos, outros arrays de dimensões necessárias para atender nossas necessidades.</p>
+    <p style="color: red;">Obs: podemos ter dois arrays isolados dentro da aplicação ou arrays multidimensionais, indices apontando para outros arrays.</p>
+    <p>Este tipo de estrutura facilita a leitura de dados em sistemas mais complexos.</p>
+    <p>O atributo length contabiliza corretamente apenas se os indices forem numéricos, partirem da posiçãp zero e forem sequenciais.</p>
+    <script>
+        var lista_things =  Array()
+        lista_things['frutas'] = Array('Banana', 'Morango', 'Maçã', 'Uva')
+        lista_things['pessoas'] = []
+        lista_things['pessoas']['a'] = 'Jorge'
+        lista_things['pessoas']['b'] = 'José'
+        lista_things['pessoas']['c'] = 'Maria'
+        document.write(lista_things['pessoas']['b'])
+
+
+        
+    </script>
+</body>
+</html>

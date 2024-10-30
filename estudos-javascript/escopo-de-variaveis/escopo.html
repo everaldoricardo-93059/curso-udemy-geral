@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escopo de Variáveis</title>
+</head>
+<body>
+
+    <h1>Escopo de Variáveis</h1>
+
+    <p style="color:red">Obs: escopos de função e bloco tem acesso a variáveis definidas no escopo global. </p>
+    <br><br><br>
+    <p>Conceito de hoisting: a variável lançada dentro de um escopo de bloco, (if/else por exemplo), sofre uma elevação e é acessada tambem pelo escopo global e de função.</p>
+    <script>
+        //escopos: global, função e o bloco
+
+
+        //escopo de bloco
+        var serie = 'Friends'
+        if (true) {
+            var serie2 = 'Game of Thrones'
+            document.write(serie)
+            var serie2 = 'Game of Thrones'
+        }
+
+        //Também escopo global
+        document.write('<br />')
+        document.write(serie2)
+
+        document.write('<br />')
+        
+        //escopo de função
+        function x() {
+            var serie3 = 'The Walking Dead'
+            document.write(serie)
+            document.write('<br />')
+            document.write(serie2)
+            document.write('<br />')
+            document.write(serie3 + ' /Obs: está impressão foi gerada apenas dentro do escopo de função.')
+        }
+
+        x()
+        document.write(serie3)
+    </script>
+    <br>
+    <p style="color:red;">Ao passo que as variáveis declaradas dentro do escopo de função só podem ser acessadas dentro do escopo da funçao. A variável "The walking Dead foi declarada dentro do escopo de função."</p>
+</body>
+</html>

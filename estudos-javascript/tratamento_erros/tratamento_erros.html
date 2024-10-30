@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de Erros em Javascript</title>
+</head>
+<body>
+    <h1>Tratamento de Erros</h1>
+    <h3>Try - Tente</h3>
+    <h3>Catch - Pegar</h3>
+    <h3>Throw - Lançar</h3>
+    <h3>Finally - Finalmente</h3>
+    <script>
+
+        //Netflix
+
+        var video = Array()
+
+        video[1] = Array()
+        video[1]['nome'] = 'Fullmetal Alchemist'
+        video[1]['categoria'] = 'Anime'
+
+        function getVideo(video) {
+
+            try {
+                 //lógica
+                //Https
+                /**Obs: o catch recebe o erro e então podemos 
+                tomar uma ação**/
+                console.log(video[0]['nome'])
+            } catch(erro){//catch - reativo
+                tratarErro(erro)/**Obs: representa o
+                erro(a string) produzido na interpretação do script**/
+                console.log('Agora sim podemos tratar esse erro')
+                throw new Error('Houve um erro mas não se preocupe, estamos trabalhando nisso agora!')
+        //throw - proativo
+
+            } finally {
+                console.log('Sempre passa por aqui!(try/catch)')
+            }
+            console.log('A aplicação não morreu')
+        }
+
+        function tratarErro(e) {
+            //lógica para registrar o erro no servidor
+            console.log(e)
+        }
+
+        getVideo(video)
+    </script>
+
+    <h3>Throw - serve para lançar excessões dentro das nossas aplicações</h3>
+    <p style="color: red;">Podemos escolher o local onde será lançada a excessão e que mensagem irá trazer para o usuário, geralmente ele é colocado no catch mas não é uma regra.</p>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos na página</title>
+</head>
+<body>
+
+    <h1>Eventos no site</h1>
+    <h3 style="color: red;">Eventos são interações do usuário no
+    uso da página do site(Ex: clique do mouse, apertar uma tecla 
+    no teclado, etc...</h3>
+    <h2>Principais eventos capturados pelo javascript através do uso do mouse</h2>
+    <ol style="color: green;">
+        <li>Onclick - quando o elemento é clicado.</li>
+        <br>
+        <li>ondblclick -quando o elemento é clicado duas vezes</li>
+        <br>
+        <li>onmouseup - quando um click sob determinado elemento é liberado</li>
+        <br>
+        <li>onmouseover - quando o cursor do mouse sobrepôe um elemento</li>
+        <br>
+        <li>onmouseout - quando o cursor do mouse sai da região da página ocupada pelo elemento</li>
+    </ol>
+    <br>
+    <h2 style="color: rgb(228, 18, 18); text-align: center;">Div teste</h2>
+    <p style="text-align: center;">clique na div(onclick)</p>
+    <div onclick="acao()" style="background: rgb(0, 255, 157); height: 50px; width: 150px; margin: auto;"></div>
+    <br>
+    <h2 style="color: red; text-align: center;"); text-align: center;">Div teste</h2>
+    <p style="text-align: center;">clique na div(ondblclick)</p>
+    <div ondblclick="acao()" style="background: rgb(208, 255, 0); height: 50px; width: 150px; margin: auto;"></div>
+    <br>
+    <h2 style="color: red; text-align: center;"); text-align: center;">Div teste</h2>
+    <p style="text-align: center;">clique na div(onmouseclick)</p>
+    <div onmouseup="acao()" style="background: rgb(0, 183, 255); height: 50px; width: 150px; margin: auto;"></div>
+    <br>
+    <h2 style="color: red; text-align: center;">Div teste</h2>
+    <p style="text-align: center;">clique na div(onmouseover)</p>
+    <div onmouseover="acao()" style="background: rgb(43, 255, 0); height: 50px; width: 150px; margin: auto;"></div>
+    <br>
+    <h2 style="color: red; text-align: center;">Div teste</h2>
+    <p style="text-align: center;">clique na div(onmouseout)</p>
+    <div onmouseout="acao()" style="background: rgb(140, 0, 255); height: 50px; width: 150px; margin: auto;"></div>
+    <script>
+        function acao() {
+            alert('Evento disparado')
+        }
+    </script>
+</body>
+</html>

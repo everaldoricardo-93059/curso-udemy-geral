@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herança - POO</title>
+</head>
+<body>
+
+    <h1>
+        Pilar da Herança - POO
+    </h1>
+    <h2 style="color: red;">A herança traz duas vantagens para o nosso código.
+    </h2>
+    <ol>
+        <li>Código mais reutilizável, menos redundante.</li>
+        <li>Manutenção posterior mais fácil.</li>
+    </ol>
+
+    <h2>A herança também é um exercício de abstração, na analíse dos objetos precisamos identificar se há atributos comuns entre eles que justifiquem a criação de uma terceira classe juntando esses atributos. Podemos encontrar na literatura termos como superclasse e subclasse, classes Pai e filho e classes especializadas.</h2>
+    <script>
+        /*Esta classe junta os atributos da classe cachorro e passaro*/
+        class Animal {
+            constructor() {
+                this.cor = ''
+                this.tamanho = null
+                this.peso = null
+            }
+
+            dormir() {
+                console.log('Dormir')
+            }
+
+        }
+        /*Operador super na clsse Cachorro para herdar os atributos
+        e métodos da classe Animal*/
+
+        class Cachorro extends Animal {
+            constructor() {
+                super()
+                this.orelhas = 'Grandes e caídas'
+            }
+            correr() {
+                console.log('Correr')
+            }
+
+
+            rosnar() {
+                console.log('Rosnar')
+            }
+        }
+         /*Operador super na clsse Passaro para herdar os atributos
+        e métodos da classe Aniimal*/
+        class Passaro extends Animal {
+            constructor() {
+                super()
+                this.bico = true
+            }
+
+            voar() {
+                console.log('Voar')
+            }
+        }
+
+        /*No exemplo papagaio percebemos que a herança progride como cascata, a classe Papgaio herda atributos da classe Pássaro e da classe Animal.*/
+        //Método herdado da classe Passaro
+        class Papagaio extends Passaro {
+            constructor() {
+                super()
+                this.sabeFalar = true
+            }
+
+            falar() {
+                console.log('Falar')
+            }
+        }
+
+        //Instanciando objetos
+        let cachorro = new Cachorro()
+        let passaro = new Passaro()
+        let papagaio = new Papagaio()
+
+        cachorro.dormir()
+        passaro.dormir()
+        papagaio.dormir()
+        papagaio.falar()
+       
+        //classes utilizando o atributo peso, comum entre ele.
+        console.log(cachorro)
+        console.log(passaro)
+        console.log(papagaio)
+       
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Literais - Objetos Unicos</title>
+</head>
+<body>
+    <h1>Objetos Literais - Objetos Únicos</h1>
+    <h2 style="color: red;">Um fato bastante interessante sobre os objetos literais é que todo objeto é único, e mesmo quendo armazenamos este objeto em várias váriveis, todas elas apontarão para o mesmo objeto.</h2>
+    <script>
+        let assinatura = {
+            idCliente: 1000,
+            descricao: 'Acesso a Internet',
+            mensagem: status= () => {
+                console.log('Ativo agora!')
+            }
+
+        }
+        console.log(assinatura.descricao)
+        /*Obs: aqui o que acontece na prática é que a referência contida dentro do variável assinatura que aponta para o nosso objeto literal está sendo associada a variável Y. A variável y não recebe o objeto literal mas sim uma referência de acesso a esse objeto, de tal modo que agora nós temos apenas um objeto dentro da nossa aplicação que esta sendo referenciado por variáveis diferentes.*/
+        let y = assinatura
+        console.log(y.descricao)
+        console.log(y.mensagem())
+        console.log(assinatura.mensagem())
+
+        y.descricao = 'Internet + Tv + Telefone'
+        console.log(assinatura.descricao)
+        console.log(y.descricao)
+    </script>
+</body>
+</html>

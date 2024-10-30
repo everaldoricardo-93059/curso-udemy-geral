@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encapsulando atributos e métodos</title>
+</head>
+<body>
+    <h1>Encapsulando Atributos e Métodos</h1>
+    <h2>A idéia do princípio do encapsulamento é fazer com que atributos ou métodos sejam ou públicos ou protegidos ou privados.</h2>
+    <h2 style="color: red;">São operadores que permitem atribuir níveis de visibilidade pros atributos e métodos de um objeto.</h2>
+    <h3>Em Javascript o principio de encapsulamento ainda é um pouco frágil, então precisamos usar os métodos GET e SET para definir qual é o nível de exposição que queremos para determinado atributo do objeto.</h3>
+    <h2 style="color: red;">Usando modelos baseados em classe, todos os atributos  e métodos são públicos, já nas funções construtoras temos mais flexibilidade para definirmos quais atributos farão parte do escopo da função, e assim ter mais privacidade. </h2>
+
+    <script>
+        let Carro = function() {
+            this.cor = 'Vermelho'
+            this.modelo = 'Gol'
+            this.velocidadeAtual = 0
+            this.velocidadeMaxima = 180
+
+            this.acelerar = function() {
+                let velocidade = this.getvelocidadeAtual() + 50
+                if(velocidade > this.velocidadeMaxima) {
+                    velocidade = this.velocidadeMaxima
+                }
+                this.setvelocidadeAtual(velocidade)
+
+            }
+
+            this.getvelocidadeAtual = function(){
+                return this.velocidadeAtual
+            }
+
+            this.setvelocidadeAtual = function(velocidadeAtual) {
+                this.velocidadeAtual = velocidadeAtual
+            }
+        }
+
+        let carro = new Carro()
+        console.log(carro.velocidadeAtual)
+        carro.acelerar()
+        console.log(carro.velocidadeAtual)
+        carro.acelerar()
+        console.log(carro.velocidadeAtual)
+        carro.acelerar()
+        console.log(carro.velocidadeAtual)
+        carro.acelerar()
+        console.log(carro.velocidadeAtual)
+        /*Alterando o valor da variável, o que mostra que o atributo é público.*/
+        carro.velocidadeMaxima = 250
+        carro.acelerar()
+        console.log(carro.velocidadeAtual)
+
+
+/*Objeto Carro2 usando o princípio do encapsulamento com variáveis.*/
+        let Carro2 = function() {
+            /*Variável do contexto da função para 
+            usar o princípio do encapsulamento escondendo o atributo velocidadeMaxima dentro do escopo da função.*/
+            let velocidadeMaxima = 180
+            let quilometrosRodados = 0
+
+            this.cor = 'Vermelho'
+            this.modelo = 'Gol'
+            this.velocidadeAtual = 0
+
+            this.acelerar = function() {
+                let velocidade = this.getvelocidadeAtual() + 50
+                if(velocidade > velocidadeMaxima) {
+                    velocidade = velocidadeMaxima
+                }
+                this.setvelocidadeAtual(velocidade)
+
+                /*A cada chamada do método acelerar vamos adicionar ao atributo quilometrosRodados*/
+                quilometrosRodados += 0.05
+                console.log(quilometrosRodados)
+            }
+
+            this.getvelocidadeAtual = function(){
+                return this.velocidadeAtual
+            }
+
+            this.setvelocidadeAtual = function(velocidadeAtual) {
+                this.velocidadeAtual = velocidadeAtual
+            }
+        }
+        let carro2 = new Carro2()
+        console.log(carro2.velocidadeAtual)
+        carro2.acelerar()
+        console.log(carro2.velocidadeAtual)
+        carro2.acelerar()
+        console.log(carro2.velocidadeAtual)
+        carro2.acelerar()
+        console.log(carro2.velocidadeAtual)
+        carro2.acelerar()
+        console.log(carro2.velocidadeAtual)
+        carro2.acelerar()
+        console.log(carro2.velocidadeAtual)
+        carro2.acelerar()
+        console.log(carro2.velocidadeAtual)
+        //aqui não conseguimos mais acessar e alterar o atributo
+        carro.velocidadeMaxima = 250
+        carro2.acelerar()
+        console.log(carro2.velocidadeAtual)
+
+        console.log(carro)
+        /*Aqui o atributo velocidadeMaxima não é exibido mais 
+        provando a sua privacidade.*/
+        console.log(carro2)
+
+
+
+        /*Objeto Carro3 usando o princípio do encapsulamento com variáveis.*/
+        let Carro3 = function() {
+            /*Variável do contexto da função para 
+            usar o princípio do encapsulamento escondendo o atributo velocidadeMaxima dentro do escopo da função.*/
+            let velocidadeMaxima = 180
+            let quilometrosRodados = 0
+
+            this.cor = 'Vermelho'
+            this.modelo = 'Gol'
+            this.velocidadeAtual = 0
+
+            this.acelerar = function() {
+                let velocidade = this.getvelocidadeAtual() + 50
+                if(velocidade > velocidadeMaxima) {
+                    velocidade = velocidadeMaxima
+                }
+                this.setvelocidadeAtual(velocidade)
+
+                /*A cada chamada do método acelerar vamos adicionar ao atributo quilometrosRodados.
+                Neste exemplo não usamos o THIS porque desta forma o atributo seria público.*/
+                setquilometrosRodados(0.07)
+                console.log(quilometrosRodados)
+            }
+
+            this.getvelocidadeAtual = function(){
+                return this.velocidadeAtual
+            }
+
+            this.setvelocidadeAtual = function(velocidadeAtual) {
+                this.velocidadeAtual = velocidadeAtual
+            }
+
+            /*Função criada para atuar sobre o atributo quilometrosRodados*/
+            let setquilometrosRodados = function(q) {
+                quilometrosRodados += q
+            }
+        }
+        let carro3 = new Carro3()
+        console.log(carro3.velocidadeAtual)
+        carro3.acelerar()
+        console.log(carro3.velocidadeAtual)
+        carro3.acelerar()
+        console.log(carro3.velocidadeAtual)
+        carro3.acelerar()
+        console.log(carro3.velocidadeAtual)
+        carro3.acelerar()
+        console.log(carro3.velocidadeAtual)
+        carro3.acelerar()
+        console.log(carro3.velocidadeAtual)
+        carro3.acelerar()
+        console.log(carro3.velocidadeAtual)
+        //aqui não conseguimos mais acessar e alterar o atributo
+        carro.velocidadeMaxima = 250
+        carro3.acelerar()
+        console.log(carro3.velocidadeAtual)
+
+        console.log(carro)
+        /*Aqui o atributo velocidadeMaxima não é exibido mais 
+        provando a sua privacidade.*/
+        console.log(carro2)
+
+    </script>
+    
+</body>
+</html>

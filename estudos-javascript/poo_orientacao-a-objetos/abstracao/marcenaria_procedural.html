@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio da Marcenaria</title>
+</head>
+<body>
+    <h1>Abstração da Marcenaria</h1>
+    <h3>Um software de Marcenaria</h3>
+    <h3 style="color: red;">Se fossemos trabalhar com vários objetos cadeiras precisaríamos criar um array para acessar especificamente cada uma delas, tendo assim que criar um Array.</h3>
+    <script>
+        //Um software de Marcenaria
+        //Cadeira e sofá
+        //Paradigma Procedural
+        // Características ou atributos da cadeira
+        let qtde_pernas = 4
+        let giratoria = false
+        let cor = 'azul'
+
+        //Array de cadeiras
+        let cadeiras = Array()
+        // Obs: precisamos criar vários arrays porque cada cadeira tem seus atributos.
+
+        //Obs: primeira cadeira
+        cadeiras[0] = Array()
+        cadeiras[0]['qtde_pernas'] = 4
+        cadeiras[0]['giratoria'] = false
+        cadeiras[0]['cor'] = 'azul'
+
+        //Obs: segunda cadeira
+        cadeiras[1] = Array()
+        cadeiras[1]['qtde_pernas'] = 1
+        cadeiras[1]['giratoria'] = true
+        cadeiras[1]['cor'] = 'vermelha'
+
+        //Obs: terceira cadeira
+        cadeiras[2] = Array()
+        cadeiras[2]['qtde_pernas'] = 4
+        cadeiras[2]['giratoria'] = false
+        cadeiras[2]['cor'] = 'azul'
+
+        //Ações ou métodos da cadeira
+       function girar_Cadeira(indice) {
+        if(cadeiras[indice]['giratoria'] === true) {
+            document.write('Girou')
+        }else{
+            document.write('A cadeira não é giratória.')
+        }
+       }
+
+       function adicionar_cadeiras(qtde_pernas, giratoria, cor) {
+            let cadeira = Array()
+
+            cadeira['qtde_pernas'] = qtde_pernas
+            cadeira['giratoria'] = giratoria
+            cadeira['cor'] = cor
+
+            cadeiras.push(cadeira)
+
+       }
+
+       adicionar_cadeiras(3, false, 'verde')
+       console.log(cadeiras)
+       girar_Cadeira(2)
+       document.write('<br />')
+       console.log(cadeiras)
+
+    </script>
+</body>
+</html>

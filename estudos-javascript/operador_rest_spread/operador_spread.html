@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador Spread</title>
+</head>
+<body>
+
+    <h1>Operadores Rest(<span style="color: red;">juntar estrutura de dados</span>) e Spread(<span style="color: red;">espalhar estruturas de dados</span>)</h1>
+    <h2>O operador em si é contituído por 3(...) pontos, o que define se ele vai ser Rest ou Spread é o contexto onde ele está sendo utilizado.</h2>
+
+    <h2>Contexto Spread(Observe no console!)</h2>
+    <h3>O operador Spread serve para espalhar um Array dentro de outra estrutura. Podemos posicionar os elementos no inicio ou no final.</h3>
+
+    <script>
+        //Contexto Spread
+
+        //String
+
+        let tituloArtigo = 'Como utilizar o operador Rest/Spread.'
+
+        console.log(tituloArtigo)
+        console.log(...tituloArtigo)
+        //Utilizando o operador Spread dentro de um Array
+        console.log([...tituloArtigo])
+
+        //Arrays dentro de Arrays
+        let listaCursos1 = ['ModeJs e MongoDB', 'ES6, TypeScript e Angular 4']
+        let listaCursos2 = ['Multiplataforma Android/IOS', 'Introdução oa GNU/Linux']
+        let listaCursosCompleto = ['Web Completo', 'Android Completo', ...listaCursos1, ...listaCursos2]
+        console.log(listaCursosCompleto)
+
+        //Spread no contexto de objetos
+        let pessoa = {
+            nome: 'João',
+            idade: 27
+        }
+
+        let clone = {endereco: 'Rua: Abc', ...pessoa}
+        console.log(clone)
+
+
+    </script>
+    
+</body>
+</html>

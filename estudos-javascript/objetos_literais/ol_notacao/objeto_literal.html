@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos dos Objetos Literais</title>
+    <style>
+        fieldset {
+        border: 1px solid black;
+        width: 500px;
+        padding: 20px;
+        }
+
+        input {
+            margin: 2px 2px 10px 2px;
+        }
+
+        label {
+            margin-right: 20px;
+        }
+    </style>
+<body>
+    <h1>Objeto literal</h1>
+    <h2>Usando o Ecmascript 6. Como estamos falando apenas de um objeto, o uso do objeto literal é muito mais simples para imprimirmos as informações</h2>
+    <form action="">
+        <fieldset>
+            <label for="">Nome:</label>
+            <input type="text" name="" id="" style="padding-left: 200px;"><br>
+            <label for="">Idade:</label>
+            <input type="number" name="" id="" style="width: 50px; margin-left: 6px;">
+            <label for="" style="margin-left: 50px;">Sexo:</label>
+            <select name="" id="">
+                <option value="selecione">Selecione</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+            </select><br>
+            <label for="" style="margin-right: 0px;">Profissão:</label>
+        <input type="text" name="" id="" style="padding-left: 100px;"><br>
+        <input type="submit" value="Avançar" style="margin-left: 280px ;">
+        </fieldset>
+    </form>
+
+    <script>
+        let nome = 'Jorge'//document.getElementById('').value
+        let idade = 29
+        let sexo = 'Masculino'
+        let profissao = 'Programador'
+
+        let objeto = {
+            nome: nome,
+            idade: idade,
+            sexo: sexo,
+            profissao: profissao,
+            exibirResumo: function(){
+                console.log(`${this.nome}, ${this.sexo}, ${this.idade}, ${this.profissao}`)
+            }
+        }
+
+        console.log(objeto)
+        objeto.exibirResumo()
+        /*Obs: Usando melhorias do ECMA 6*/
+        let objeto2 = {
+            nomeTeste: nome, // nome = nome variável /valor = valor variável
+            idade,
+            sexo,
+            profissao,
+            exibirResumo() {
+                console.log(`${this.nomeTeste}, ${this.sexo}, ${this.idade}, ${this.profissao}`)
+            }
+        }
+
+        console.log(objeto2)
+        objeto2.exibirResumo()
+    </script>
+    
+    
+</body>
+</html>

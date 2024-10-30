@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador super</title>
+</head>
+<body>
+    <h1>Operador super</h1> 
+    <h3>O operador <span style="color: blue;">super</span> fornece acesso para o método constructor da classe <span style="color: blue;">Pai</span>, ele deve sempre ficar antes dos operadores <span style="color: blue;">this</span>. Nós podemos ou não passar parâmetros através do método super, para o <span style="color: blue;">constructor</span> da classe Pai.</h3>
+    <script>
+        /*Esta classe junta os atributos da classe cachorro e passaro*/
+        class Animal {
+            constructor(cor, tamanho, peso) {
+                this.cor = cor
+                this.tamanho = tamanho
+                this.peso = peso
+            }
+
+            dormir() {
+                console.log('Dormir')
+            }
+
+        }
+      
+    
+         /*Operador super na classe Passaro para herdar os atributos
+        e métodos da classe Animal*/
+         /*A varíavel bico só existe no contexto da função contructor*/
+         
+         class Passaro extends Animal {
+            constructor(bico, cor, tamanho, peso) {
+                super(cor, tamanho, peso)
+                this.bico = bico
+            }
+
+            voar() {
+                console.log('Voar')
+            }
+        }
+
+        /*No exemplo papagaio percebemos que a herança progride como cascata, a classe Papagaio herda atributos da classe Pássaro e da classe Animal.*/
+        //Método herdado da classe Passaro
+        class Papagaio extends Passaro {
+            //varíavel do contexto da função
+            constructor(bico, sabeFalar, cor, tamanho, peso) {
+                super(bico, cor, tamanho, peso)
+                //varíavel do contexto da classe
+                this.sabeFalar = sabeFalar
+            }
+
+            falar() {
+                console.log('Falar')
+            }
+        }
+        /*O parâmetro true é recebido no constructor da respectiva classe*/
+        let qualquer_coisa = new Papagaio('Médio', true, 'Verde', 25, 350)
+        let passaro = new Passaro('curto', 'Azul', 150, 500)
+        let qualquer_coisa2 = new Papagaio('curto', false,  'Branco', 25, 15)
+
+        console.log(qualquer_coisa)
+        console.log(passaro)
+        console.log(qualquer_coisa2)
+
+
+       
+
+    </script>
+</body>
+</html>

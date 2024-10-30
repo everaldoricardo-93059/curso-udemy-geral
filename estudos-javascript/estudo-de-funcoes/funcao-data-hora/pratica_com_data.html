@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Funções de data e hora</title>
+</head>
+<body>
+    <h1>Prática com o uso do método Date</h1>
+    <h3 style="color: red;"> Adidionar e remover dias</h3>
+    <h3 style="color: red;">No momento da instanciação do objeto Date
+    podemos setá-lo para efetuar cálculos entre duas datas.</h3>
+    <br><br>
+    <h3 style="color: red;">Obs: o método getTime recupera os
+    milisegundos entre duas datas para fazermos cálculos entre elas, usando como base a data de "01 de janeiro de 1970"(Padrao computacional de sistemas operacionais baseados no UNIX).</h3>
+    <br>
+
+<script>
+    // Adicionar ou remover dias
+    data = new Date()
+    //Adicionar / Remover dias
+    document.write(data.toString())
+    data.setDate(data.getDate() + 1) // acrescenta 1 para adicionar
+    document.write('<hr />')
+    document.write(data.toString())
+    document.write('<br />')
+    document.write('<br />')
+    document.write('<br />')
+    document.write('<br />')
+
+     // Adicionar ou remover meses
+     data = new Date()
+    //Adicionar / Remover dias
+    document.write(data.toString())
+    data.setMonth(data.getMonth() - 1) // Retira 1 para retornar
+    document.write('<hr />')
+    document.write(data.toString())
+    document.write('<br />')
+    document.write('<br />')
+    document.write('<br />')
+    document.write('<br />')
+
+         // Adicionar ou remover ano
+    //Adicionar / Remover dias
+    document.write(data.toString())
+    data.setFullYear(data.getFullYear() + 2) // Retira 1 para retornar
+    document.write('<hr />')
+    document.write(data.toString())
+    document.write('<br />')
+    document.write('<br />')
+    document.write('<br />')
+    document.write('<br />')
+
+    //Fazendo o cálculo entre duas datas diferentes
+    //Obdecer a sequência de dados estabelecida na linguagem
+
+    //Primeira data 16/07/2024 (Obs: não esquecer de acrescentar 1 ao mês)
+    var data1 = new Date(2017, 0 , 15)
+
+    
+    //Segunda data 31/12/2024
+    var data2 = new Date(2017, 1, 23)
+
+    document.write(data1.toString())
+    document.write('<hr />')
+    document.write(data2.toString())
+    document.write('<br />')
+    document.write('<br />')
+    document.write('<br />')
+    document.write('<br />')
+
+    //Converter as datas para algo que possmos calcular(*Método getTime*)
+    document.write(data1.getTime())
+    document.write('<hr />')
+    document.write(data2.getTime())   
+
+    document.write('<br />')
+    document.write('<br />')
+    document.write('<br />')
+    document.write('<br />')
+
+    //Encontrar a quantidade de milisegundos entre a data1 e a data2
+    var tempo_entre_datas =  data1.getTime() - data2.getTime()
+    var tempo_de_dia = (1*24*60*60*1000)
+    //O método Math.abs retorna o valor absoluto de um número
+    document.write(Math.abs(data1.getTime() - data2.getTime()))
+    document.write('<br />')
+    document.write('Um dia tem ' + (1*24*60*60*1000) + ' milisegundos')
+    document.write('<br />')
+    document.write('<br />')
+    document.write('<hr />')
+
+    //resultado em dias 
+    document.write(Math.abs(data1.getTime() - data2.getTime()) / tempo_de_dia)
+
+
+
+</script>
+    
+</body>
+</html>

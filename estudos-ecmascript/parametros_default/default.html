@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parâmetros Default</title>
+</head>
+<body>
+
+    <h1>Parâmetros Default</h1>
+
+    <h2 style="color: red;">Esta é uma forma de evitar o risco de uma função trabalhar com valores indefinidos, eviotando erros.</h2>
+    <script>
+        function contarUmaHistoria(personagem = 'Fubá', atividade = 'correr no parque', nome = 'Paulo') {
+         document.write(`Era uma vez um cachorro chamado ${personagem}, ele adorava ${atividade}, seu dono era ${nome} e eles viveram felizes para sempre.`)   
+        }
+        contarUmaHistoria(undefined, 'enterrar ossos', 'Pedro')
+        /*Quando não envio um parâmetro na função o javascript usa o parâmetro default estabelecido na assinatura do método.*/
+    </script>
+</body>
+</html>

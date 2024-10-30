@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificando Valores</title>
+</head>
+<body>
+    <h1>Objetos Literais - Modificando Valores</h1>
+
+    <script>
+        let pessoa = {
+            nome: 'José', 
+            idade: 45
+        }
+
+        console.log(pessoa.nome)
+
+        /*Obs: se por algum motivo eu quiser alterar os atributos:
+        1 - Recuperando a referência para o objeto literal
+        2 - A partir do operador ponto e do nome do atributo podemos atribuir novos valores.*/
+
+        pessoa.nome = 'Fernanda',
+        pessoa.idade = 32
+
+        console.log(pessoa.nome)
+        console.log(pessoa.idade)
+    </script>
+
+    
+</body>
+</html>

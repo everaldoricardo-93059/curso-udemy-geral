@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução a orientação a objetos</title>
+</head>
+<body>
+    <h1>Orientação a objetos</h1>
+    <h3>O que é paradigma??</h3>
+    <h4 style="color: red;">Padrão, conduta. Forma de se fazer alguma coisa</h4>
+    <p>Obs: o paradigma de orientação a objetos não é o sucessor do paradigma procedural porque na prática eles se completam. O Javascript suporta os dois paradigmas.</p>
+    <br>
+    <h3>O que é programação reativa??</h3>
+    <h4>A programação reativa é uma boa opção para aplicativos que precisam lidar com grandes volumes de dados em tempo real, garantir alta performance e escalabilidade, e fornecer respostas rápidas e confiáveis aos usuários</h4>.
+    <br>
+    <h3>São 4 os pilares do paradigma de orientção a objetos.</h3>
+    <h4>1 - Abstração</h4>
+    <h4>2 - Encapsulamento</h4>
+    <h4>3 - Herança</h4>
+    <h4>4 - Polimorfismo</h4>
+
+    <script>
+        let a = 10
+        let b = 7
+        let operator = 'mult'
+
+        function calcular(a, b, operator) {
+            if(operator === 'mult'){
+                console.log(a * b)
+            }
+
+        }
+        calcular(a, b, operator)
+
+        class Calculadora {
+
+            constructor() {
+                this.a = 8
+                this.b = 5
+                this.operator = 'mult'
+            }
+            calcular() {
+                if(this.operator === 'mult') {
+                    console.log(this.a * this.b)
+                }
+            }
+        }
+        calculadora = new Calculadora()
+        calculadora.calcular()
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Construtoras</title>
+</head>
+<body>
+    <h1>Objetos à partir de Funções Construtoras</h1>
+    <h3>A essência do Javascript são funções, as features disponíveis no ES6 sâo frágeis no que se refere ao encapsulamento, com as funções construtoras nós podemos resolver isto.</h3>
+    <h3 style="color: red;">
+        Na prática a sintaxe é muito proxima da sintaxe de classe, mas temos alguns comportamentos diferentes porque o contexto de uma classe é um pouco diferente do contexto de uma função, e é esta diferença que nos permite criar dentro de funções construtoras, atributos e métodos privados, ou seja, passíveis de serem acessados apenas por dentro do objeto, isto na prática é uma implementação técnica do princípio do encapsulamento.
+        <h3>Obs: diferente da classe não utilizamos a função constructor().</h3>
+        <h3>Os termos GET e SET fazem referência ao princípio do encapsulamento.</h3>
+    </h3>
+    <script>
+        /*Esta funcão possui um escopo que será recuperado pelo operador new*/
+        let Carro = function() {
+            //Características
+            this.cor = 'Amarelo'
+            this.modelo = 'Chevette'
+            this.velocidadeAtual = 0
+            this.velocidadeMaxima = 180
+            this.marcha = function(marcha) {
+                if (marcha <= 4)
+                console.log('Está no padrão.')
+                else
+                console.log('Passou do ponto!')
+            }
+
+            //Métodos
+            /*Dentro de funções criamos atributos que recebem 
+            funções, quando chamamos o atributo executamos a função.*/
+
+            /*Obs: toda vez que chamarmos o método acelerar, vamos recuperar a velocidade atual, somar 10, atribuir este valor a variável velocidade e na sequência encaminhá-la como parâmetro para setvelocidadeAtual modificando o seu valor.*/
+            this.acelerar = function() {
+                /*Poderiamos fazer desta forma mas temps que respeitar o principio do encapsulameno*/
+                //this.velocidadeAtual  += 10
+
+                let velocidade = this.getvelocidadeAtual() + 10
+                this.setvelocidadeAtual(velocidade)
+            }
+            /*Usando as convenções criamos dois outros métodos
+            para atuar sobre o objeto*/
+            /*Se eu quiser a qualquer momento pegar a velocidade atual
+            eu uso o método get*/
+            this.getvelocidadeAtual = function(){
+                return this.velocidadeAtual
+            }
+            /*O objetivo do método set é receber a velocidadeAtual e atribuir este parâmetro ao método this.velocidadeAtual*/
+            this.setvelocidadeAtual = function(velocidadeAtual){
+                this.velocidadeAtual = velocidadeAtual
+            }
+
+        }
+
+        /*Para criar um objeto usando uma função construtora 
+        usamos o operador new, na prática, uma função construtora tem a definição da classe do objeto que queremos criar, desta forma podemos criar várias instâncias deste objeto. */
+         let carro = new Carro()
+
+        /*A partir da varíavel que faz referência ao objeto podemos acessar seus atributos e métodos utilizando o operador PONTO.*/
+        console.log(`A velocidade Atual é: ${carro.getvelocidadeAtual()}`)
+
+
+        //usando o método acelerar
+        carro.acelerar()
+        carro.acelerar()
+        carro.acelerar()
+
+        console.log(`A velocidade Atual é: ${carro.getvelocidadeAtual()}`)
+        console.log(carro)
+        carro.marcha(5)
+        
+    </script>
+
+</body>
+</html>

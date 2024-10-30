@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array básico</title>
+</head>
+<body>
+
+    <h1>Array básico</h1>
+    <p>Exemplos no documento HTML</p>
+    <script>
+        var lista_frutas = Array()
+        //var lista_frutas = [] Obs: arrays podem ser escritos assim também.
+
+        lista_frutas[1] = 'Banana'
+        lista_frutas[2] = true
+        lista_frutas['x'] = 'Morango' //Obs:não tem problema o indice ser uma string, desde que seja único.
+        lista_frutas[4] = 100
+
+        console.log(lista_frutas)
+        /*Obs: quando declaramos o Array desta forma o próprio 
+        Javascript determina os indices
+        obs: assim também  var lista_frutas2 = Array('Banana', 'Maçã', 'Morango', 'Uva')*/ 
+         var lista_frutas2 = Array('Banana', 'Maçã', 'Morango', 'Uva') 
+         console.log(lista_frutas2[0])
+
+    </script>
+</body>
+</html>

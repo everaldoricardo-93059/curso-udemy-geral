@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Funções de data e hora</title>
+</head>
+<body>
+    <h1>Funções para manipulação de data e hora</h1>
+    <p style="color:red">Obs: o objeto date precisa ser instanciado 
+    para ser utilizado no documento. As informações retornadas são
+    baseadas nos dados do sistema operacional.</p>
+    <h3>Dentro do método Date podemos utilizar o get para recuperar dados e usar o set para setar dados.</h3>
+    <script>
+
+        var data = new Date()
+        document.write('Dia ' + data.getDate() + '/') 
+        document.write(data.getMonth() + 1 + '/') 
+        document.write(data.getFullYear()) 
+    </script>
+    
+</body>
+</html>

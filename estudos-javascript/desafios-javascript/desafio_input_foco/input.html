@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio input foco</title>
+    <style>
+        .estilo1 {
+            background: yellow;
+        }
+
+        .estilo2 {
+            background: red;
+        }
+
+        .estilo3 {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: red;">Desafio Javascript campo de input</h1>
+    <h3>Mudança de cores do campo input quando determinado numero de caracteres são inseridos</h3>
+    <br>
+
+    <input id="foco" onfocus="acionaFoco()" onblur="validaCampo()"    type="text" placeholder="Digite aqui">
+
+    <script>
+        function acionaFoco() {
+            document.getElementById('foco').className = 'estilo1'
+        }
+
+        function validaCampo() {
+            var condicao = document.getElementById('foco').value
+
+            if(condicao.length < 3) {
+                document.getElementById('foco').className = 'estilo2'
+            }
+            else {
+                document.getElementById('foco').className = 'estilo3'
+            }
+        }
+    </script>
+</body>
+</html>

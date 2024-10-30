@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bom location</title>
+</head>
+<body> 
+    <h1>Elemento location</h1>
+    <h2>Este elemento fornece atributos e métodos da URL atual(path)</h2>
+    <h3 style="color: red;">Quando usamos links estamos aplicando o objeto location</h3>
+    <button onclick= "acessarGoogle()">Acessar Google</button>
+    <button onclick= "window.location.href = 'https://www.faus.com.br' ">Acessar Faus</button>
+    <script>
+        function acessarGoogle() {
+           var g = window.location.href = 'https://www.google.com'
+        }
+
+       /** function acessarFaus() {
+            var f = window.location.href = 'https://www.faus.com.br'
+        }**/
+    </script>
+    
+</body>
+</html>

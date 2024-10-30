@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bom Screen</title>
+</head>
+<body>
+    <h1>O elemento Screen fornece recursos a tela do Browser</h1>
+    <h2>Através do objeto Screen podemos ter acesso a informações de largura e altura da parte interna do navegador aonde os elementos são renderizados.</h2>
+    <h3 style="color: red;">Os valores apresentados são os valores potenciais do navegador ( o máximo que ela pode atingir</h3>
+
+    <script>
+        // /** Obs: as barras de ferramentas são excluídas**/
+       var height =  window.screen.availHeight
+       var width = window.screen.availWidth
+
+       document.write('Altura do navegador é ' + height + '<br />')
+       document.write('Largura do navegador é ' + width)
+       document.write('<br />')
+
+       if (width < 500) {
+        document.write('Lógica para impressão do menu versão mobile.')
+       }else {
+        document.write('Lógica para impressão do menu versão web.')
+       }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos no teclado</title>
+</head>
+<body>
+
+    <h1>Eventos javascrip no teclado</h1>
+    <h2>Principais eventos</h2>
+    <ol>
+        <li>onkeydown - quando a tecla e pressionada. O caracter é confirmado só após a confirmação do evento.</li>
+        <br>
+        <li>onkeyup - quando ela deixa de ser pressionada</li>
+        <br>
+        <li>onkeypress - quando ela está sendo pressionada</li>
+        <span>Obs: isso acontece apenas nas teclas com caracter</span>
+        <br>
+    </ol>
+    <h3>Input para teste(onkeydown)</h3>
+    <input onkeydown="acao()" type="text" />
+    <br><h3>Input para teste(onkeyup)</h3>
+    <input onkeyup="acao()" type="text" />
+    <br>
+    <h3>Input para teste(onkeypress)</h3>
+    <input onkeypress="acao()" type="text" />
+    <script>
+        function acao() {
+            alert('Evento disparado')
+        }
+    </script>
+</body>
+</html>

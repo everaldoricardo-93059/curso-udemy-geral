@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Variáveis com incremento de valores</title>
+    <style>
+        .lista {
+            color: rgb(70, 0, 128);
+        }
+    </style>
+</head>
+<body>
+    <h1>Variáveis com incremento de valores.</h1>
+
+    <p>Obs: Última opção é a concatenação de strings com o operador mais(Olá Jorge!).
+
+
+    </p>
+
+    <h3 style="color:red">Muito cuidado com a precedência dos operadores aritméticos!!!</h3>
+    <p class="lista">(1)Parênteses</p>
+    <p class="lista">(2)Potenciação</p>
+    <p class="lista">(3)Multiplicacão</p>
+    <p class="lista">(4)Divisão</p>
+    <p class="lista">(5)Soma</p>
+    <p class="lista">(16)subtração</p>
+    <p>A multiplicação com a divisão e a soma com a subtração vale o que vir primeiro.</p>
+    <br>
+
+    <script>
+       var teste = 10
+       var concatenacao = 'Olá '
+        //teste = teste + 5 (sem incremento)
+        teste += 5 //(com incremento, mais resumida)
+        document.write(teste)
+        document.write('<br />')
+        teste -= 5
+        document.write(teste)
+        document.write('<br />')
+        teste /= 5
+        document.write(teste)
+        document.write('<br />')
+        teste *= 5
+        document.write(teste)
+        document.write('<br />')
+        teste %= 5
+        document.write(teste)
+        document.write('<br />')
+
+        concatenacao += 'Jorge!'
+        document.write(concatenacao)
+       
+
+    </script>
+</body>
+</html>

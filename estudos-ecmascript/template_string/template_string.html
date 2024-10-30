@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template String</title>
+</head>
+<body>
+    <h1>Usando o Template String</h1>
+    <h3 style="color: red;">O template String é semelhante ao recurso de concatenação, ele melhora
+    a legibilidade do código. O becpix também aceita quebra de linha, ele abre uma janela para o interpretador Javascript atuar.
+    </h3>
+
+    <h3 style="color: blue;">
+        Podemos fazer qualquer declaração dentro dos becpix,
+        inclusive funções.
+    </h3>
+    <script>
+        let nome = 'Jorge'
+        let nome1 = 'Everaldo'
+        /*Obs: no Template String usamos crases e o operador
+         ${}*/
+         document.write('Oi ' + nome + ', tudo bem??')
+
+         document.write('<br/>')
+         document.write('<br/>')
+
+         document.write(`Oi 
+         ${nome1}, 
+         tudo bem??
+         `)
+
+         document.write('<br/>')
+         document.write('<br/>')
+
+         document.write(`7 * 7 = ${7*7}`)
+         
+         document.write('<br/>')
+         document.write('<br/>')
+
+         function calcular(x,y){
+            return x * y
+         }
+         document.write(`A multiplicação entre 7 e 5 é: ${calcular(7,5)}`)
+    </script>
+</body>
+</html>

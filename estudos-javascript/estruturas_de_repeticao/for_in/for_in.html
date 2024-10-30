@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laço FOR IN</title>
+
+    <h1 style="color: red;">
+        Estrutura de repetição For in
+    </h1>
+    <h2>O parâmetro in percorre todo o array até acusar undefined</h2>
+
+    <h2>Em arrays com indices diferentes é uma ótima solução o uso do for in</h2>
+<script>
+    var listaConvidados = ['Jorge', 'Jamilton', 'José', 'Ana', 'Maria']
+    console.log(listaConvidados)
+    for(var x in listaConvidados) {
+        document.write('Índice ' + x + ' Valor ' + listaConvidados[x] + '<br />')
+    }
+
+    document.write('<br />')
+
+    
+
+    var listaCompra = Array()
+
+    listaCompra['a'] = 'arroz'
+    listaCompra[10] = 'feijão'
+    listaCompra['zebra'] = 'pão'
+    listaCompra[-1] = 'macarrão'
+    listaCompra['true'] = 'carne'
+    console.log(listaCompra)
+    document.write(listaCompra)
+    document.write('<br />')
+    document.write('<br />')
+
+    for(var x in listaCompra) {
+        document.write('Índice ' + x + ' Valor ' + listaCompra[x] + '<br />')
+    }
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

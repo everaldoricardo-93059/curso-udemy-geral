@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+</head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores de declaração VAR e LET</title>
+<head/>    
+<body>
+    <h1>Operador let</h1>
+    <h3>A diferença entre o let e o var é que o let preserva 
+        o escopo onde a variável foi criada. Em javascript temos 3 escopos, o global, o de função e o de bloco.
+        quando abrimos e fechamos chaves estamos declarando um escopo.
+    </h3>
+    <h3 style="color: red;">Obs: o uso incorreto do var e do let, no que se refere ao alcançe do escopo pode causar um bug na aplicação.</h3>
+
+    <h3>
+        Em termos de escopo global, variáveis tipo VAR podem ser usadas dentro de funções e de escopo de bloco, funciona como uma cascata, porém se nós usarmos a variável VAR dentro da função ela estará somente disponível dentro da função e dos escopos de bloco dentro da função.
+    </h3>
+    <h3 style="color: red;">Obs: escopos de função diferentes de escopos de bloco, são isoladas do escopo global. Variáveis usadas dentro de funções não sofrem o <span style="text-decoration: underline;">HOSTING,</span> não são elevadas para o escopo global.</h3>
+    <div id="output">
+
+    </div>
+    <script>
+        /*3 escopos - global, função e bloco*/
+        var serie = 'Friends'
+        function x () {
+            var serie = 'Game of Thrones'
+            console.log('Função => ' + serie)
+            if(true){
+                console.log('Bloco dentro da função => ' + serie)
+
+                console.log('Bloco fora da função => ' + serie2)
+
+                console.log('Variável LET => ' + serie3)
+            
+            }
+        }
+
+        if(true) {
+            var serie2 = 'The Walking Dead'
+            let serie3 = 'Harry Porter'
+            console.log('Bloco fora da função => ' + serie)
+            console.log('Bloco fora da função => ' + serie2)
+            console.log('Bloco fora da função, variável LET => ' + serie3)
+        }
+
+        x()
+
+        console.log('Global => ' + serie)
+        console.log('Global => ' + serie2)
+        console.log('Global, variável LET => ' + serie2)
+        //neste caso o escopo global é o nosso window. 
+        const getMessage = () => 'Hello World';
+        document.getElementById('output').innerHTML = getMessage();
+
+    </script>
+</body>
+</html>

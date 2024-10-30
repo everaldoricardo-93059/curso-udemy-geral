@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+
+    <h1>Prototype - (Protótipo)</h1>
+
+    <h2>Acessando utilizando o prototype com o operador <span style="color: red;">__proto__.</span></h2>
+
+    <h3>Outro detalhe importante que temos que observar é que todos os objetos, por padrão, herdam os prototype de <span style="color: red;">OBJECT</span>, então a partir do prototype do object, nos podemos estabelecer atributos e métodos que podem ser herdados por qualquer objeto da aplicação. Mas muito cuidado porque desta forma você estará criando um atributo ou método global que poderá ser acessado por todos obbjetos da aplicação.</h3>
+    
+    
+    <script type="text/babel">
+
+        /*Definindo um valor no prototype do object para ser herdado nos objetos da aplicação.*/
+        Object.prototype.attr50 = 'Atributo OBJECT'
+
+        let animal = {
+            attr1:'animal'
+        }
+
+        let vertebrado = {
+            __proto__: animal, attr2: 'vertebrado'
+        }
+
+        let ave = {
+            __proto__: vertebrado, attr3: 'ave', attr2: 'Atenção: sobreposição!!!'
+        }
+
+        console.log(ave.attr1, ave.attr2, ave.attr3)
+        console.log(ave.attr1, ave.attr2, ave.attr3, ave.attr50, animal.attr50)
+        
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de Formulario</title>
+</head>
+<body onscroll="console.log('Evento disparado')" >
+
+    <h1>Eventos javascrip de formulário</h1>
+    <h3>Principais eventos</h3>
+    <ol>
+        <li>onfocus - quando o elemento recebe o foco do cursor do mouse</li>
+        <br>
+        <li>onblur - quando o elemento perde o foco</li>
+        <br>
+        <li>onchange - quando o estado do elemento é modificado</li>
+        <p style="color: red;">Obs: este elemento é muito utilizado com o elemento select</p>
+        <br>
+        <p>Obs: usamos o console.log para teste porque se usassemos o alert perderiamos o foco no momento do seu dispara e teriamos que dar ok para retorno do foco</p>
+    </ol>
+    <input onfocus="console.log('Recebeu o foco')" type="text" />
+    <br>
+    <br>
+    <input onblur="console.log('Perdeu o foco')" type="text" />
+    <br>
+    <br>
+    <input onchange="console.log('Teste')" type="text" />
+    <select onchange="console.log('Estado foi modificado')" name="" id="">
+        <option value="">-- Selecione --</option>
+        <option value="1">Primeira opção</option>
+        <option value="2">Segunda opção</option>
+    </select>
+
+</body>
+</html>

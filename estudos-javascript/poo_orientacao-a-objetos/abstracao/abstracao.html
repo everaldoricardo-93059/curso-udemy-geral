@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilar da Abstração em Poo</title>
+</head>
+<body>
+    <h1>Abstração</h1>
+    <h3>Abstração é muito mais uma qualidade intuitiva, de conhecimento das coisas do que de programação.</h3>
+    <h3>Temas que fazem parte do conhecimento da abstrção</h3>
+    <ol>
+        <li>Entidade</li>
+        <li>Identidade</li>
+        <li>Características(Atributos)</li>
+        <li>Ações(Métodos)</li>
+    </ol>
+    <h3>Obs: quando estamos definindo classes, é uma boa prática utilizar a instrução CamelCase, ou seja, letras maiúsculas no início das palavras. <span style="color: red;">Na declaração das características devenos usar o CamelCase apenas na segunda palavra.</span></h3>
+    <h3>Obs: o constructor() é o método automatico para instanciar a entidade, em outras palavras, construir o objeto, é onde se declara os atríbutos do objeto. Neste local utilizaremos o operador <span style="color: red;">this</span>, ele tem a inteligência para conectar os atríbutos ao contexto do objeto, ou seja, uma varável que estará encapsulada dentro do objeto.</h3>
+    <h2>Como declaramos as acões ou métodos?</h2>
+    <h3>As acões são definidas com a mesma sintaxe de funções, porém quando declaradas dentro de um modelo são definidas como métodos. Neste caso não estamos declarando a palavra reservada function porque estamos usando o <span style="color: red;">Es6</span>, esse tipo de contrução de classe é uma festure desta versão, se estivessemos usando uma versão anterior precisaríamos do tradutor BABEL.</h3>
+    <h3 style="color: red;">Agora para criar a entidade temos que dar a ela uma identidade. O new é o operador que indica para o interpretador do Javascript que eu quero transformar um modelo em um objeto, a partir desta instancia nós podemos recuperar os atributos e métodos do objeto.</h3>
+
+   <script>
+     //Modelo da Entidade/Objeto
+     //Obs: o objeto é uma instançia do modelo
+    class ContaBancaria {
+            //agência
+            //numeroConta
+            //saldo
+            //limite
+     /*Obs: o constructor() é o método automatico para instanciar a entidade, em outras palavras, construir o objeto.*/       
+            constructor() {
+                this.agencia = 1075
+                this.numeroConta  = 8351125
+                this.saldo = 50
+                this.limite = 450
+        }
+
+        depositar(valorDeposito) {
+            this.saldo += valorDeposito
+        }
+        sacar(valorSaque) {
+            this.saldo -= valorSaque
+        }
+
+        consultarSaldo() {
+            return this.saldo
+        }
+    }
+    /*Obs: abaixo criamos uma variável fazendo referência para um objeto. A partir desta referência podemos acessar objetos isolados, mesmo que tenham sido gerados do mesmo modelo porque, afinal, são objetos distintos.*/
+    let conta1 = new ContaBancaria()
+    let conta2 = new ContaBancaria()
+
+    document.write(`Saldo da conta1: R$${conta1.consultarSaldo()}`)
+    document.write('<br />')
+    conta1.depositar(1200)
+    document.write(`Saldo da conta1 após um depósito: R$${conta1.consultarSaldo()}`)
+    document.write('<br />')
+    document.write(`Saldo da conta2: R$${conta2.consultarSaldo()}`)
+    document.write('<br />')
+    conta1.depositar(500)
+    document.write(`Saldo da conta1 após um depósito: R$${conta1.consultarSaldo()}`)
+    document.write('<br />')
+    conta1.sacar(750)
+    document.write(`Saldo da conta1 após um saque: R$${conta1.consultarSaldo()}`)
+    document.write('<br />')
+    conta1.depositar(350)
+    document.write(`Saldo da conta1 após um depósito: R$${conta1.consultarSaldo()}`)
+
+   </script>
+</body>
+</html>

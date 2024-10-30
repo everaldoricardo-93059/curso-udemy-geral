@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring - Operador Rest</title>
+</head>
+<body>
+
+    <h1>destructuring Assigment - Operador Rest</h1>
+    <script>
+        //Array
+        //Extraindo todos os valores em uma única variável
+        let arr = [10, 20, 30, 40]
+        let [ a, ...resto ] = arr
+
+         //Imprimindo os valores
+        console.log(a)
+        console.log(resto)
+
+        let obj = {
+            z: 15,
+            b: 25,
+            c: 35,
+            d: 45
+        }
+
+        let { z, ...y } = obj
+
+        //Imprimindo os valores
+        console.log(z)
+        console.log(y)
+    </script>
+</body>
+</html>

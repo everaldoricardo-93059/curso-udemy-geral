@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcões javascript</title>
+</head>
+
+<h1>Funcões Javascript</h1>
+
+<p>
+    funcion calcularArea(parâmetros ou argumentos) {
+        Lógica da função
+    }
+</p>
+
+<p style="color:red">Obs: as funções podem ser sem retorno, do tipo Void e com retorno(return)</p>
+
+<h3 style="color: red;">Cuidado com o cálculo usando soma, pois é retornado string do prompt.</h3>
+
+<p><span style="color: red;">Obs importante</span>: Não importa o ponto onde são declaradas as funcões no programa porque em primeiro lugar o programa vai varrer o código para identificar se há funções a serem executadas.</p>
+
+<p>Obs: uma função pode ter apenas um retorno.</p>
+<script>
+
+         // largura e area são parâmetros(argumentos) formais da função
+         function calcularArea(largura, comprimento) {
+        //lógica da função
+        var area = largura * comprimento
+       
+        return area
+    }
+
+    var largura = prompt('Digite a largura o terreno')
+    var comprimento = prompt('Digite o comprimento o terreno')
+
+    var calc = calcularArea(largura, comprimento)
+    document.write('O terreno possui ' + calc + ' metros quadrados')
+   
+
+</script>
+<body>
+
+    
+</body>
+</html>

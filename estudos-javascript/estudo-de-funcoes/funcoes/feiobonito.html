@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcões javascript</title>
+</head>
+<body>
+    <h1>Funcão Feio e Bonito</h1>
+
+    <script>
+        function feioBonito (res) {
+            if (res != 'amor') {
+                return 'Feio'
+            }
+            else {
+                return 'Bonito'
+            }
+        }
+    
+        let sentido = prompt('O que prefere? (amor/odio')
+        let sent = feioBonito(sentido)
+        document.write(sent)
+    </script>
+</body>
+</html>

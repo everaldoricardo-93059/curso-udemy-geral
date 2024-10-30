@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Operadores aritméticos</title>
+</head>
+<body>
+    <h1>Operadores Aritméticos</h1>
+
+    <p>Obs: O incremento pré(esquerda da variável) vai atuar dentro da instrução que a variável está inserida, o incremento pós(direita da variável) apenas após a instrução
+    ser atualizada.</p>
+
+    <p>
+        Obs: Os valores recuperados dentro de um sistema, seja com o prompt ou http, ou outro modo qualquer, seja banco de dados, vão sempre vir em  formato de string.
+        Por isso, muito cuidado com o tratamento de dados dentro do programa, principalmente com operações de soma que podem viram concatenação, tanto a função parseInt para transformar string em valor numérico deve ser usada quanto também a função toString() para realizar o caminho inverso.
+    </p>
+<script>
+    
+            var num1 = 9
+            var num2 = 2
+    
+            document.write('A soma entre '+ num1 +' e '+ num2 +' é: ' + (num1 + num2) + '<br />')
+    
+            document.write('A subtração entre '+ num1 +' e '+ num2 +' é: ' + (num1 - num2) + '<br />')
+    
+            document.write('A multiplicação entre '+ num1 +' e '+ num2 +' é: ' + (num1 * num2) + '<br />')
+    
+            document.write('A divisão entre '+ num1 +' e '+ num2 +' é: ' + (num1 / num2) + '<br />')
+    
+            document.write('O módulo entre '+ num1 +' e '+ num2 +' é: ' + (num1 % num2) + '<br />')
+    
+            document.write('O incremento de ' + num1 + ' é: ' + (++num1) + '<br />')
+
+            document.write('O decremento de ' + num1 + ' é: ' + (--num1) + '<br />')
+            
+</script>
+</body>
+</html>

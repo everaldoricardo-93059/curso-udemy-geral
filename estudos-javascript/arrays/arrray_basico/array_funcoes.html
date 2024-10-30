@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array básico</title>
+</head>
+<body>
+
+    <h1>Array funções de inclusão e exclusão
+    </h1>
+    <h2 style="color: red;">Exemplos no Vs Code</h2>
+    <script>
+        var lista_frutas = Array()
+        lista_frutas['0'] = 'Banana'
+        lista_frutas['1'] = 'Morango'
+        lista_frutas['2'] = 'Uva'
+        lista_frutas['3'] = 'Maçã'
+        //incluir um elemnto no final do Array()
+        lista_frutas.push('goiaba')
+        lista_frutas.push('ameixa')
+        //incluir um elemento no inicio do Array()
+        lista_frutas.unshift('maracujá')
+        //exclusão de elementos do final do Array()
+        //Obs: não é necessário passar parâmetro
+        lista_frutas.pop()
+        //exclusão de elementos do inicio do Array()
+        lista_frutas.shift()
+        console.log(lista_frutas)
+
+        var lista_elemento = Array()
+        lista_elemento['carros'] = []
+        lista_elemento['carros'][3] = 'passat'
+        lista_elemento['carros'][4] = 'fusca'
+        lista_elemento['carros']['5'] = 'corcel'
+        lista_elemento['utensilios'] = Array('colher', 'garfo', 'faca')
+        lista_elemento.push('maverick')
+        lista_elemento['utensilios'].unshift('concha')
+        lista_elemento['utensilios'].push('pano de prato')
+        console.log(lista_elemento)
+       
+    
+
+    </script>
+</body>
+</html>

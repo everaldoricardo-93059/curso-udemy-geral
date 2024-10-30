@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de repetição - While</title>
+</head>
+<body>
+    <h1 style="color: red;">Aprendendo While</h1>
+    <h2>A condição proposta se repetirá até dar false</h2>
+    <h3 style="color: red;">Podemos utilizar a condição para interromper o laço a qualquer momento</h3>
+    <p>Neste exemplo a condição iria até 10 mas utilizamos o break para interromper no 5</p>
+    <script>
+        var x = 1 //contador
+           while (x <= 10)/*condição*/ {
+               //códigos repetidos até dar false
+               document.write(x + '<br />')
+               if (x === 5) {
+                   break
+               }
+               x += 1
+           }
+           document.write('Condição finalizada....')
+       </script>
+
+       <h2 style="color: red;">Aqui usamos a condição continue, para finalizar um passo e iniciar outro</h2>
+       <h3>Muito cuidado nessas situações com a posição do incremento que deve vir antes para evitar um loop infinito</h3>
+       <script>
+        var x = 0 //contador
+           while (x <= 9)/*condição*/ {
+               //códigos repetidos até dar false
+               x++
+               if (x === 5) {
+                   continue
+               }
+               document.write(x + '<br />')
+           }
+           document.write('Condição finalizada....' + '<br />')
+           document.write('Obs: perceba que o número 5 não foi imprimido.')
+       </script>
+
+</body>
+</html>

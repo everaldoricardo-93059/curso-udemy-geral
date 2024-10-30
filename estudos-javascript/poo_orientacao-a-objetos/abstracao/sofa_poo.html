@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofá - POO </title>
+</head>
+<body>
+    <h1>Modelo sofá POO</h1>
+    <script>
+        class Sofa {
+            constructor(qtde_lugares, giratorio, cor, couro) {
+                this.qtde_lugares = qtde_lugares
+                this.giratorio = giratorio
+                this.cor = cor
+                this.couro = couro
+            }
+
+            sofaCouro() {
+                if(this.couro === true) {
+                    document.write('*** RICO ***')
+                }else {
+                    document.write('*** POBRE ***')
+                }
+            }
+        }
+
+        let sofas = Array()
+
+        sofas.push(new Sofa(2, false, 'cinza', true))
+        sofas.push(new Sofa(3, false, 'rasgado', false))
+        sofas.push(new Sofa(1, true, 'vermelho', false))
+
+        //sofa.sofaCouro()
+        document.write('<br />')
+        //sofa1.sofaCouro()
+        console.log(sofas)
+    </script>
+</body>
+</html>

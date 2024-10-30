@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encapsulamento</title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+
+    <h1>Encapsulamento - POO</h1>
+    <h2 style= "color: red;">O encapsulamento consiste em encapsular um objeto com o objetivo de deixá-lo seguro. O objeto vai ter condições de dizer o que dentro dele está disponível pro sistema. Nós podemos assim, determinar, dentro do objeto, que atributo ou método, é publico ou privado, criando assim uma camada de segurança.
+    Como o operador private ainda não está disponível para uso nas aplicações, temos que usar o (_) para indicar que aquele item é privado.
+    </h2>
+
+    <h2 style="color: blue;">Para acessar atributos privados do objeto usamos os métodos getters e setters.</h2>
+    <h2>Os getters acessam os dados privados e os setters os modificam.</h2>
+
+    <h2>Embora no Javascript se possa recuperar a referência para o objeto e alterá-lo, a convenção em termos de encapsulamento orienta que utilizemos o método set para faze-lo, isto por medida de segurança.</h2>
+    
+    <script type="text/babel">
+        class Tv {
+            constructor() {
+                this._relacaoCanais = Array(2, 3, 4, 7, 10)
+                this._canalAtivo = 4
+                this._volume = 5
+            }
+
+           // getters e setters
+            //Obs: funciona como uma função, a qual usamos para acessar o atributo indiretamente.(!Segurança!)
+            /*Obs: no get não é tão comum buscar exibir atributos do objeto, no set sim.
+            Quando usamos o método get, o interpretador do Javascript sabe que tem que procurar por uma função com esta descrição.*/
+
+            get canalAtivo() {
+                return this._canalAtivo
+            }
+
+            //o set serve para setar o valor de um atributo.
+           /* No set define-se uma função com
+            o mesmo nome do atributo onde possamos recuperar um parâmetro*/  
+                  /* No set define-se uma função com
+            o mesmo nome do atributo onde possamos recuperar um parâmetro*/  
+            set canalAtivo(canal) {
+                //
+                if(this._relacaoCanais.indexOf(canal) !== -1) {
+                this._canalAtivo = canal}
+            }
+        }
+
+        let tv = new Tv()
+        /*Quando em atribuo um valor a uma pseudovariável com o mesmo nome da função o Javascript irá procurar uma função que seja do tipo SET, caso em não atribua um valor ele irá procurar pelo método GET.*/
+        /*Obs: Pseudovariavel representa a chamada do método set*/
+        tv.canalAtivo = 10
+        console.log(tv.canalAtivo)
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laço Foreach</title>
+</head>
+<body>
+
+    <h1 style="color: red;">
+        Estrutura de repetição Foreach
+    </h1>
+    <h2>O Foreach é uma função pertencente ao objeto Array()</h2>
+
+    <h2>Para usar o Foreach precisamos recuperar o Array(Obs: função do prototype do objeto array)</h2>
+    <h2>O Foreach aguarda como parâmetro uma função de callback()Obs: uma função que indica ao foreach como ele tem que atuar em cada um dos indices do Array - Valor/Indice/Array(Obs: poderiam ser qualquer nome, o importante é a sequência) </h2>
+    <h3 style="color: red;">Em javascript os parâmetros das funções são variáveis</h3>
+<script>
+    var listaConvidados = ['Viviane', 'Rosângela', 'Miguel', 'Lucas', 'Fernanda']
+        console.log(listaConvidados)
+        document.write(listaConvidados[3] + '<br />')
+    listaConvidados.forEach(function(valor, indice, array){
+        //lógica
+        console.log('Indice ' + indice + ' valor ' + valor)
+        if(valor == 'Lucas') {
+            array[indice] = 'um novo e máximo valor'
+        }
+    })
+    console.log(listaConvidados)
+    document.write(listaConvidados[3])
+</script>
+<h1>
+    Uso do Foreach usando o recurso de parâmetros variáveis
+</h1>
+<h2>Neste exemplo usaremos apenas o retorno do primeiro parâmetro(valor)</h2>
+<h2>Em javascript os parâmetros das funções são variáveis</h2>
+<script>
+     var listaConvidados2 = ['Maria', 'Paula', 'Everaldo', 'Auta', 'Cordeiro']
+     listaConvidados2.forEach(function(valor, indice) {
+        console.log(valor)
+        console.log(indice)
+     })
+</script>
+<br><br>
+<h1>Em javascript funções podem ser atribuídas a variáveis</h1>
+<h2>Obs: é interessante encaminhar a função como variável porque se houver outros arrays dentro da aplicação nós podemos encaminha a mesma variável para tratar índices de outros arrays</h2>
+ <script>
+     var listaConvidados3 = ['Pedro', 'Lucas', 'Jorge', 'Vinícius', 'Cadu']
+     var f = function(valor, indice) {
+        console.log(valor, indice)
+     }
+     listaConvidados3.forEach(f)
+     document.write(listaConvidados3)
+ </script>
+<br><br>
+<h1>O forEach atua apenas em valores numéricos a partir de 0, não precisa ser sequencial, mas precisa ser numérico, caso contrário ele desconsidera a posição do array.
+    <span style="color: red;">Neste caso devemos usar o for in</span>
+</h1>
+<script>
+    listaFuncionarios = Array()
+
+    listaFuncionarios['x'] = 'Marquito'
+    listaFuncionarios[false] = 'Ratinho'
+    listaFuncionarios[true] = 'Santos'
+    listaFuncionarios[33] = 'Xarope'
+    listaFuncionarios[27] = 'Lion'
+    listaFuncionarios[-12] = 'Batman'
+    listaFuncionarios[-5] = 'Ciclope'
+    for(var x in listaFuncionarios) {
+        document.write(listaFuncionarios[x])
+    }
+</script>
+</body>
+</html>

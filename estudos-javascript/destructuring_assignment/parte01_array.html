@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Assignment</title>
+
+</head>
+<body>
+    <h1 style="text-decoration: underline; text-align: center;">Destructuring Assignment</h1>
+    <h2>Função do operador Destructuring: ele é um operador de desestruturação. Basicamete falando, ele tira valores de dentro de uma estrutura, que pode ser um <span style="color: red;">Array</span> ou um <span style="color: red;">Objeto</span>.</h2>
+    <br>
+    <h2>Nós usamos o operador Destructuring basicamente para evitar a verbosidade do código. Temos que indicar qual é o operador que usaremos para declarar a variável</h2>
+    <script>
+        //const => constante
+        //let => variável do escopo do bloco da função ou global
+
+
+        //Destructuring em Arrays
+        let frutas = ['Banana', 'Goiaba', 'Uva', 'Abacaxi']
+        
+     
+        //Usando o Destruturing(Obs: o token é igual ao do Array)
+        // Obs: verifique que os colchetes estão a esquerda
+        //do operador de atribuição
+        //No momento da desestruturação estamos declarando
+        //variáveis novas.
+        let [ x, y, , z ] = frutas // pular um indice
+
+        console.log(x, y, z)
+       
+
+        /*Obs: uma outra possibilidade que temos é de atribuir valores padrões no momento da desetruturação dos nossos Arrays.*/
+        let bichos = ['Cão', 'Gato', 'Vaca', 'Camelo']
+        let [a, b = 'Elefante', c, d, e = 'Leão'] = bichos
+
+        console.log(a, b , c, d, e)
+   
+
+        //Extraindo valores de Arrays multidimensionais
+       let coisas = [['Banana', 'Goiaba', 'Pera', 'Abacaxi'], ['José', 'Maria', 'Paulo', 'Silvio']] 
+
+        //Pulando o primeiro índice e recuperando um valor
+        //do segundo Array
+        let [[, , p],  [, n2]] = coisas
+        console.log(p, n2)
+
+       
+
+    </script>
+</body>
+</html>

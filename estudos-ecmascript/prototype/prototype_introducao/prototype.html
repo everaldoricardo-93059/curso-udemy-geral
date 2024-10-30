@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype(Protótipo)</title>
+</head>
+<body>
+    <h1>Prototype - Introdução</h1>
+
+    <h3>Todos os objetos em Javascript descendem de object, e por tráz disso tudo existe um conceito chamado <span style="color: red;">PROTOTYPE. A forma como o Javascript lida com objetos é um pouco diferente de como outras linguagens funcionam.</span></h3>
+    <h3>Quando criamos um objeto em Javascript, ele sempre descende de <span style="color: red;">OBJECT</span>, e automaticamente herda seus atributos e métodos.
+    </h3>
+
+    <h2 style="color: blue;">Repare que todos os objetos criados possuem o atributo <span style="color: red;">_Proto_</span> e ele vem com urderline para evitar ser sobreposto, mas o que é mais curioso é que <span>OBJECT</span>não é um objeto, mas sim um função.</h2>
+    <script>
+
+        //Objeto literal
+        let a1 = {
+            cor: 'Branco e Azul',
+            modelo: 'Airbus A380',
+            levantarVoo: function() {
+                console.log('Levantar Vôo!')
+            }
+            
+        }
+
+        //Função Construtora
+        let AviaoF = function() {
+            this.cor = 'Azul',
+            this.modelo = 'Boeing 787',
+            this.levantarVoo = function() {
+                console.log('Levantar Vôo!')
+            }
+        }
+
+        let a2 = new AviaoF()
+
+        //Modelo em classe 
+        class AviaoC {
+            constructor() {
+                this.cor = 'Vermelho'
+                this.modelo = 'Embraer E-Jets'
+                }
+
+                levantarVoo() {
+                    console.log('Levantar Voo!')
+                }
+        }
+
+        let a3 = new AviaoC()
+
+        console.log(a1)
+        console.log(a2)
+        console.log(a3)
+
+    </script>
+    
+</body>
+</html>

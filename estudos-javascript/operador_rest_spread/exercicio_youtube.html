@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Youtube</title>
+</head>
+<body>
+
+    <h1>Exemplo de uso de Rest e Spread</h1>
+    <script>
+        //Dados
+
+        const valores = [4, 1, 2, 3, 4, 5]
+        const valores2 = [8, 7, 9, 12]
+
+        const cliente = {
+            nome: 'Angelo Luiz',
+            cpf: '014.034.510 - 11',
+            nascimento: '23/06/1986',
+            telefone: '9981560346',
+            endereco: {
+                rua: 'Avenida Javascript',
+                numero: '232',
+                cidade: 'Paranaguá',
+                estado: 'Paraná',
+                pais: 'Brasil',
+            },
+        };
+
+        //Rest e Spread
+        //Pegar nome do cliente mas não descartar o resto
+        const {nome, ...resto} = cliente;
+        console.log('nome:', nome );
+        console.log('resto:', resto)
+
+        //Função que soma N valores
+        //Método tradicional
+        function soma(val1, val2) {
+            return val1 + val2
+        }
+        console.log('soma:', soma(5,5))
+
+        //Usando o operador
+        function sum(...valores) {
+            //somando valores do Array com reduce
+            return valores.reduce((acc, next) => acc + next);
+            console.log('Function sum:', sum(3, 5, 8))
+        }
+
+        //Concatenando Arrays
+        //Modo tradicional
+        const arra = [...valores, ...valores2]
+        console.log('Soma dos arrays:', arra)
+
+        //Adicionar elemento no inicio do Array
+        const arra2 = [99, ...valores]
+        console.log(arra2)
+        //Adicionar elemento no fim e inicio do Array
+        const arra3 = [...valores, 99]
+        console.log(arra3)
+
+        //Função que recebe um Array de valores e multiplica 
+        //o primeiro por todos os outros
+        function x ([primeiro, ...resto]) {
+            //somando valores do Array
+            return resto.map(v => v * primeiro) 
+            console.log('soma do valores:', x(valores2));
+        }
+
+        //Adidona novo atributo ao objeto cliente: updateAt
+        const cli = {...cliente, updateAt: new Date()}
+        console.log('cli:', cli)
+
+        //Altera o telefone do cliente para 1111111111
+        const cli2 = {...cliente, telefone: '111111111'}
+        console.log('cli2:', cli2)
+
+    </script>
+</body>
+</html>

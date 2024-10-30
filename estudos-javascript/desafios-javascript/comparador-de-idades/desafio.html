@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de idades</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <h1>Comparador de idades</h1>
+    <p style="color: red">Programa construído em javascript para fazer 
+        a leitura de uma idade através de uma entrada 
+        prompt e devolver uma mensagem específica.
+    </p>
+    <h3 style="margin-bottom: 0px; text-decoration: underline;">Mensagem</h3>
+
+
+<script>
+  var idade = prompt('Informe a idade da pessoa:')  
+  document.write('<br>') 
+  idade = parseInt(idade) 
+  console.log(idade)
+
+    if (idade >= 0 && idade < 15 ) {
+        document.write('Obs: Trata-se de uma criança.')
+    }
+    else if (idade >=15 && idade < 30) {
+        document.write('Obs: Estamos diante de um jovem!')
+    }
+    else if (idade >= 30 && idade < 60) {
+        document.write('Obs: Esta já é uma pessoa adulta.')
+    }
+    else {
+        document.write('Obs: Temos um idoso agora!')
+    }
+</script>
+</body>
+</html>

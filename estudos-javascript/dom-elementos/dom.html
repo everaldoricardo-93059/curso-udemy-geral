@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom elementos</title>
+</head>
+<body>
+    <h1>Selecionando elementos no DOM</h1>
+    <br>
+    <h2 style="color: red;">Principais métodos de acesso a elementos da página</h2>
+    <ol style="color: blue;">
+        <li>getElementById()- seleciona através do id. Devemos ter apenas um id por página. ele é usado em 85% dos casos.</li>
+        <br>
+        <li>getElementsByTagName() - é possível a seleção de varios elementos com mesmo identificador()tag</li>
+        <li>getElementdByClassName - retorna elementos com a mesma classe</li>
+        <br>
+        <li>getElementsByName - usado em elementos radio ou checkbox com varios names iguais, seu retorno é um node list</li>
+    </ol>
+    <br>
+    <h3 style="color: red;">Imprimidos no console.log</h3>
+    <input id="nome_usuario" 
+     type="text"
+     placeholder="Digite seu nome"
+     name="nome"
+     class="campo_texto">
+    <script>
+        //console.log(document.getElementById('nome_usuario'))
+         //console.log(document.getElementsByTagName('input'))
+         //console.log(document.getElementsByClassName('campo_texto'))
+         console.log(document.getElementsByName('nome'))
+
+    </script>
+</body>
+</html>

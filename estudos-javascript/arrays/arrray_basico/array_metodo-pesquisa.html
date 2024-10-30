@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Métodos de Pesquisa</title>
+</head>
+<body>
+
+    <h1>Array Pesquisa</h1>
+    <h2>Exemplos no documento HTML</h2>
+    <p style="color: red;">indexOf é um método de pesquisa, retorno é o indice, se 
+        ele não encontrar o elemento ele volta -1</p>
+    <p>Obs: a pesquisa é Case sensitive então ele só reconhecerá o elemento na escrita igual ao Array.</p>
+    <p>Verifique o uso da variável para o código ficar mais limpo</p>
+    <script>
+      var lista_carros = Array()
+      lista_carros[0] = 'Fusca'
+      lista_carros[1] = 'Passat'
+      lista_carros[2] = 'Corcel'
+      lista_carros[3] = 'Opala'
+      /*indexOf é um método de pesquisa, retorno é o indice, se 
+      ele não encontrar o elemento ele volta -1*/
+
+      var auxiliar = lista_carros.indexOf('Maverick')
+      if(auxiliar === -1) {
+        document.write('Elemento não existe!!')
+      } 
+      else {
+        document.write('Elemento existe e está na posição' + auxiliar)
+      }
+
+    </script>
+</body>
+</html>

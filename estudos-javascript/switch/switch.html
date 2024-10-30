@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+<body>
+    <h1>Switch</h1>
+    <p>Estrutura de condição em javascript</p>
+    <p>Podemos ter quantos cases forem necessários</p>
+    <br>
+
+    <!----------estrutura switch------------->
+    <!-- switch (parametro)
+        case 1:
+        se parâmetro === 1
+        break
+        
+        case 2:
+        se parâmetro === 2)
+        break
+    
+        default:
+        se parâmetro não encontrado(Obs: o uso do defaul é opcional)
+    -->
+
+    <script>
+        var parametro = prompt('Digite uma opção: (1 ou 2)')
+
+        switch (parseInt(parametro)) {
+            case 1:
+                document.write('Parâmetro 1')
+                break
+
+            case 2:
+                document.write('Parâmetro 2')
+                break
+                
+            default:
+            document.write('Defaut')   
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Arrow Function</title>
+</head>
+<body>
+    <h1>Funções Arrow Function ( => )</h1>
+    
+    <h2>Como chamo uma função contida dentro de uma variável??</h2>
+    <h3 style="color: red;">Assim: recupero a variável e abro e fecho parênteses para indicar que quero executar a função contida ali dentro.</h3>
+    <h3 style="color: green;">Função comum</h3>
+   <script>
+        let quadrado = function(x) {
+            return x * x
+        }
+        document.write(quadrado(8))
+    </script>
+
+    <h3 style="color: blue;">Arrow Function</h3>
+    <script>
+        //Passando um parâmetro Default
+        let redondo = (x = 7) => {
+            return x * x
+        }
+        document.write(redondo())
+    </script>
+
+    <h2 style="color: tomato;">Função Arrow Function melhorada</h2>
+    <h3>Se eu estiver usando apenas um parâmetro, posso omitir o parênteses. Quando temos apenas uma intrução de retorno também podemos omitir as chaves da função e a palavra return.</h3>
+    <script>
+        let circle = x => x * x //return implícito
+        document.write(circle(9))
+    </script>
+
+    <h2 style="color: red;">Função anônima com Arrow Function mais complexa.</h2>
+    <script>
+        let numero = prompt("Digite um número: ")
+        /*let parOuImpar = numero => {
+            if(numero % 2 === 0){
+                return "Par"
+            }else{
+                return "Impar"
+            }
+        }*/
+        //Usando o if ternário
+        let parOuImpar = numero => numero % 2 === 0 ? 'Par' : 'Impar' // return implícito
+        
+        document.write(parOuImpar(numero))
+    </script>
+
+    <h3 style="color: red;">Finalizando, as Arrow Functions nos ajudam diminuindo a quantidade de código. Funções anônimas são muito utilizadas em Javscript.</h3>
+</body>
+</html>

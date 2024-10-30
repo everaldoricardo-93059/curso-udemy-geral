@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando a massa corporal</title>
+</head>
+<body>
+    <h1>Cálculo de massa corporal(IMC)</h1>
+    <br>
+    <h3 style="color: red">Fórmula para o cálculo da massa corporal
+        de uma pessoa.
+    </h3>
+
+    <script>
+        //Entrada de dados
+        confirm('Vamos calcular a massa corporal?')
+        var nome = prompt('Informe o nome: ')
+        var altura = prompt('Informe a altura da pessoa em centímetros: ')
+        var peso = prompt('Informe o peso da pessoa: ')
+
+        //Conversão para float
+        var altura = parseFloat(altura)
+        var peso = parseFloat(peso)
+
+        //conversão da altura em metros
+        altura /= 100
+
+        //fórmula para cálculo da massa corpórea
+
+        var Mcorp = (peso / (altura**2))
+
+        if (Mcorp < 16) {
+            document.write(nome + ', o seu resultado é: (Baixo) obs: peso muito grave!')
+        }
+
+        else if (Mcorp == 16 || Mcorp < 17) {
+            document.write(nome + ', o seu resultado é: (Baixo) obs: peso grave!')
+        }
+
+        
+        else if (Mcorp == 17 || Mcorp < 18.50) {
+            document.write(nome + ', o seu resultado é (Baixo peso)')
+        }
+
+        else if (Mcorp == 18.50 || Mcorp < 25) {
+            document.write(nome + ', o seu resultado é: (Peso normal)')
+        }
+
+        else if (Mcorp == 25 || Mcorp < 30) {
+            document.write(nome + ', o seu resultado é (Sobrepeso)')
+        }
+
+        else if (Mcorp == 30 || Mcorp < 35) {
+            document.write(nome + ', o seu resultado é (Obesidade grau 1)')
+        }
+
+        else if (Mcorp == 35 || Mcorp < 40) {
+            document.write(nome + ', o seu resultado é (Obesidade grau 2)')
+        }
+
+        else  {
+            document.write(nome + ', o seu resultado é (Obesidade grau 3)')
+        }
+
+       console.log(Mcorp)
+
+
+
+    </script>
+</body>
+</html>

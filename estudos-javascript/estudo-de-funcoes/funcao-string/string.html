@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções com String</title>
+</head>
+<body>
+
+    <h1>
+        Funções para manipular Strings
+    </h1>
+
+    <h3>String Jorge Sant Ana</h3>
+    <p>Obs: a função length() retorna o número de caracteres da String</p>
+    <p>As strings sempre iniciam pelo valor 0(zero). Os caracteres vazios também são contados. </p>
+    <br>
+    <p>Obs: a função Charat() retorna  valor da do caracter dentro do indice da cadeia de caracteres que formam a string.</p>
+    <br>
+    <p>Obs: o método indexOf() retorna o valor da primeira ocorrência de determinado caracter dentro da cadeia de caracteres da string - importante: ele faz diferenciação entre caracteres maiusculos  minusculos. Quando não houver o caracter na string ele retorna o valor -1</p>
+    <br>
+    <p>O método replace() permite substituir textos dentro de uma string</p>
+    <br>
+    <p>O método substr() permite extrair parte de uma string com base em uma posição inicial seguida de um valor que representa a quantidade de caracteres a partir daquela posição inicial</p>
+    <br>
+    <p>Outros dois métodos bastante utilizados são o toLowerCase() e o método toUpperCase() que mudam os caracteres para minusculo ou maisculo.</p>
+    <br>
+    <p>O método trim() remove os espaços nas duas extremidades da string</p>
+    <script>
+
+        var nome = 'Jorge Sant Ana'
+        //propriedade length()
+        document.write(nome.length +' / ')
+
+        //propriedade CharAt()
+        document.write(nome.charAt(12)+' / ')
+
+        //propriedade Charof()
+        document.write(nome.indexOf('a')+' / ')
+
+        //propriedade replace()
+        document.write(nome.replace('Sant Ana', 'Silva')+' / ')
+
+        //propriedade substr()
+        document.write(nome.substr(6, 3)+' / ')
+
+         //propriedade toLowerCase()
+         document.write(nome.toLowerCase()+' / ')
+
+         //propriedade toUpperCase()
+         document.write(nome.toUpperCase()+' / ')
+        
+         var nome1 = ' Jorge Sant Ana '
+         //propriedade trim()
+         document.write('-' + nome1.trim() + '-'+' / ')
+
+         let text = '5'
+         let padded = text.padEnd(7, '0');
+         document.write(padded)
+    </script>
+</body>
+</html>

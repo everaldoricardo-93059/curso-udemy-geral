@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso do operador const</title>
+</head>
+<body>
+    <h1>Usando a variável Const.</h1>
+    <h3 style="color: red">
+        O operador CONST tem o comportamento similar ao LET, porém estaremos criando uma constante, que não irá sofrer alterações ao longo do uso no script.
+    </h3>
+
+    <h3 style="color: blue;">
+        Obs: é uma boa prática as constantes serem criadas 
+        com caracteres maiúsculos.
+        No momento de sua criação ele também já deve receber
+        um valor para não dar erro.
+    </h3>
+
+    <h2 style="color: red;">Muito importante: geralmente guardamos senhas de banco de dados, links para APIs e parâmetros de configuração para nossa aplicação dentro de variáveis constantes, quando recuperamos estas variáveis 
+    temos a segurança qua não haverá alterações porque o próprio Javascript não vai permitir.</h2>
+
+    <script>
+        const SERIE = 'Friends'
+
+        function x(){
+            const SERIE = 'The Walking Dead'
+            document.write('Dentro da função: ' + SERIE)
+        }
+        document.write('Escopo Global: ' + SERIE)
+
+        document.write('<br />')
+        document.write('<br />')
+
+        x()
+    </script>
+    
+</body>
+</html>

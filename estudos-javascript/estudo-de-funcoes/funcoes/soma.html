@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcões javascript</title>
+</head>
+<body>
+    <h1>Funcão soma ou subtrai</h1>
+
+    <script>
+
+        function somaSubtrai () {
+            if (sinal == '+') {
+                var adic = parseInt(n1) + parseInt(n2)
+                return adic
+            }
+            else {
+                var sub = n1 - n2 
+                return sub
+            }
+
+            return 
+        }
+
+        var n1 = prompt('Escolha um número')
+        var n2 = prompt('Escolha outro número')
+        var sinal = prompt('Qual operação(+ ou -)')
+        
+        let retorna = somaSubtrai(sinal)
+        document.write(retorna)
+        console.log()
+
+    </script>
+</body>
+</html>

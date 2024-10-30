@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Assigment - Funções</title>
+</head>
+<body>
+
+    <h1>Destructuring Assigment - Funções</h1>
+
+    <h2 style="color: red;">Obs: quando estamos trabalhando com Arrays nós verificamos a sequência mas quando são objetos nós recuperamos o atributo do objeto contido na desestruturação.</h2>
+
+    <script>
+        //Array
+        let arr = [10, 20, 30, 40]
+
+        function teste([a, b, ,c, d = 100]) {
+            console.log(a, b, c, d)
+
+        }
+
+        teste(arr)
+
+        //Objeto
+
+        let obj = {
+            a: 15,
+            b: 25,
+            c: 35,
+            d: 45
+
+        }
+
+        function teste1({a: x, b, d, c, z = 55}) {
+            console.log(x, b, d, c, z)
+        }
+        teste1(obj)
+    </script>
+    
+</body>
+</html>

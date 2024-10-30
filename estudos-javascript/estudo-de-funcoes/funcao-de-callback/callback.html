@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções de Callback</title>
+</head>
+<body>
+
+    <h1>
+        Funções de Callback
+    </h1>
+
+    <h2 style="color: red;">Obs: O termo callback é muito importante em Javascript.</h2>
+    <br>
+    <p style="color:blue; text-decoration: underline;">Funcões de callback são funções encaminhadas como parâmetro para outras funções. O objetivo é após a finalização da função ter condicões de chamar a função como parâmetro para dar continuidade a lógica da aplicação, isso é muito comum em aplicações com processamento assíncrono.</p>
+
+    <script>
+        document.write('<br />')
+
+        function exibirArtigo(id, callbackSucesso, callbackErro) {
+            //lógica: recuperar id via requisição HTTP
+            if (false) {
+                callbackSucesso('Funções de callback em JS', 'funções de callback são muito utilizadas.....')
+            }
+            else {
+                callbackErro('Erro ao recuperar os dados')
+            }
+        }
+
+        //Técnica de Wrapper, variáveis recebendo funções.
+
+        var callbackSucesso = function(titulo, descricao) {
+            document.write('<h1>' + titulo + '</h1>')
+            document.write('<hr />')
+            document.write('<p>' + descricao + '</p>')
+        }
+
+        var callbackErro = function(erro) {
+            document.write('<p>Erro: ' + erro + '</p>')
+        }
+
+        // obs: muito importante que são encaminhadas as variáveis(sem parênteses para exibição)
+
+        exibirArtigo(1, callbackSucesso, callbackErro )
+
+    </script>
+    
+</body>
+</html>

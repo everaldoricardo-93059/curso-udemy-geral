@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcenaria POO</title>
+</head>
+<body>
+    <h1>Marcenaria Paradigma POO</h1>
+
+    <script>
+        class Cadeira {
+            /*Método constructor: quando a classe é instanciada, ou seja, transformada em objeto, este método é chamado*/
+            /*Obs: as variáveis com this fazem referência ao objeto e as variáveis sem this ao escopo da função*/
+            constructor(qtde_pernas, giratoria, cor) {
+                this.qtde_pernas = qtde_pernas
+                this.giratoria = giratoria
+                this.cor = cor
+            }
+
+            girarCadeira() {
+                if(this.giratoria === true) {
+                document.write('*** GIROU ***')
+            }else {
+                document.write('*** CADEIRA NÃO É GIRATÓRIA ***')
+            }
+            }
+        }
+
+        let cadeiras = Array()
+
+        cadeiras.push(new Cadeira(4, false, 'azul'))
+        cadeiras.push(new Cadeira(1, true, 'Branco'))
+
+        console.log(cadeiras)
+        girarCadeira()
+    </script>
+</body>
+</html>

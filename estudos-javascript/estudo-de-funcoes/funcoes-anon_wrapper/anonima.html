@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função anônima e a técnica de Wrapper</title>
+</head>
+<body>
+
+    <h1>Funções anônimas e a técnica de Wrapper (<span style="text-decoration: underline;">embrulhar</span>).</h1>
+    <br>
+    <p style="color: red;">Funções anônimas não tem seu nome declarado mas o funcionamento é idêntico as funções normais.</p>
+    <p>Obs: funções anônimas são ideais para serem usadas como parâmetro de callback para outras funções.</p>
+    <br>
+    <p>O javascript incorpora um conceito muito forte de callback, que é a passagem de funções como parâmetro para outras funções.</p>
+
+    <script>
+        //Obs:técnica de wrapper permite associar funções  a variáveis
+        var exibirSauldacao = function(nome) {
+            document.write('Olá ' + nome + ', tudo bem?')
+        }
+        document.write('<br />')
+        exibirSauldacao('Jorge')
+    </script>
+
+    
+</body>
+</html>

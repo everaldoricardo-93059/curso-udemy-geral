@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Assignment</title>
+
+</head>
+<body>
+    <h1 style="text-decoration: underline; text-align: center;">Destructuring Assignment - Objetos Literais</h1>
+    <h2>Função do operador Destructuring: ele é um operador de desestruturação. Basicamete falando, ele tira valores de dentro de uma estrutura, que pode ser um <span style="color: red;">Array</span> ou um <span style="color: red;">Objeto</span>.</h2>
+    <br>
+    <h2>Nós usamos o operador Destructuring basicamente para evitar a verbosidade do código. Temos que indicar qual é o operador que usaremos para declarar a variável</h2>
+    <h2 style="color: blue;">Quando criamos objetos a partir de objetos literais, funções construtoras ou classes, nós estamos criando uma composição <span style="color: red; text-decoration: underline;">É UM</span>, já quando existe a relação de  atribuição de um objeto como sendo o valor de um atributo de outro objeto temos uma composição <span style="color: red; text-decoration:underline">TEM UM</span>.</h2>
+    <script>
+    //composição TEM UM
+    let produto = {
+        descricao: 'Notebook',
+        preco: 1800,
+        detalhes: {
+            fabricante: 'abc',
+            modelo: 'xyz'
+        }
+    }
+
+
+    /*Token
+    Array => []
+    Objetos => {}
+    */
+
+    let {descricao, preco} = produto
+    console.log(descricao, preco)
+
+
+    //composição TEM UM
+    let coisas = {
+    objeto: 'Celular',
+    ip: 8948948948948,
+    detalhes: {
+        fabricante: 'Motorola',
+        modelo: 'Moto One'
+        }
+    }
+
+    //Atribuindo outras variáveis no escopo do destructuring
+    let {objeto: o, ip: i = 0000000000, desconto = '30%'} = coisas
+    console.log(o, i, desconto)
+
+     /*Atenção para outra possibilidade:
+     A extração de atributos de objetos pertencentes a
+     outros objetos*/
+    //Recuperando fabricante e modelo
+    //Obs: neste caso também podemos renomear a variável
+    let { detalhes: {fabricante: responsavel = 'Samsung', modelo}} = coisas
+
+    console.log(responsavel, modelo)
+    </script>
+</body>
+</html>

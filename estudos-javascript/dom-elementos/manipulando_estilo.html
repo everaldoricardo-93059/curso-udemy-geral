@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando estilo de elementos</title>
+    <style>
+
+        .cor {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .ver {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+            font-size: 1.2em;
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            padding: 10px;
+            color: white;
+
+        }
+        .gre {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: green;
+            font-size: 1.2em;
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            padding: 10px;
+            color: white;
+        }
+        .az {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+            font-size: 1.2em;
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            padding: 10px;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1 style="color: red;">Manipulando estilos de elementos na página HTML</h1>
+    <br><br>
+<div class="cor">
+    
+        <button onclick="modificaEstilo('#ff0000', '120px', '620px', '10px')" type="text" class="ver">Vermelho</button>
+        <button onclick="modificaEstilo('#00ff00', '420px', '30px', '10px')" type="text" class="gre">Verde</button>
+        <button onclick="modificaEstilo('#0000ff', '400px', '400px', '50%')" type="text" class="az">Azul</button>
+</div>
+  
+    <div  id="quarter" style=" background-color: gray; width: 300px; height: 150px; border-radius: 10px; margin: auto; margin-top: 50px; border: 2px solid black;">
+        <script>
+            function modificaEstilo(corDeFundo, largura, altura, borda) {
+                //acessando atributos css
+                document.getElementById('quarter').style.backgroundColor = corDeFundo
+                document.getElementById('quarter').style.width = largura
+                document.getElementById('quarter').style.height = altura
+                document.getElementById('quarter').style.borderRadius = borda
+                //(background-color escrito em CamelCase)
+            }
+        </script>
+    </div>
+</body>
+</html>

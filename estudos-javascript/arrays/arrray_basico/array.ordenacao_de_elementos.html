@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array - Ordenação de elementos</title>
+</head>
+<body>
+    <h1>Ordenação de elementos por ordem alfabética em Arrays</h1>
+    <h3 style="color:red;">Método sort() - Faz a ordenação por ordem alfanumérica</h3>
+    <br><br>
+    <h3 style="color: blue;">Quando trabalhamos com arrays essencialmente numéricos precisamos acrescentar uma função para ensinar o método sort() a fazer a ordenação correta baseada em valores.</h3>
+    <br><br>
+    <h3 style="color: red;">Se todos os valores contidos no array forem valore numéricos mesmo em formato de string, o Javascript reconhecerá e fará a ordenação correta, porém, se apenas alguns elementos forem strings a ordenação será incorreta.</h3>
+    <script>
+        var lista_frutas = Array()
+        lista_frutas[0] = 'Uva'
+        lista_frutas[2] = 'Maçã'
+        lista_frutas[3] = 'Morango'
+        lista_frutas[4] = 'Pocã'
+        lista_frutas[5] = 'Goiaba'
+        lista_frutas[6] = 'Banana'
+        console.log(lista_frutas.sort())
+
+        var lista_numeros = Array()
+        lista_numeros[0] = 12
+        lista_numeros[2] = 40
+        lista_numeros[3] = -10
+        lista_numeros[4] = 1023
+        lista_numeros[5] = 35
+        lista_numeros[6] = -3
+        lista_numeros[7] = -11
+        lista_numeros.push(32)
+        lista_numeros.unshift(-55)
+        console.log(lista_numeros.sort(ordenaNumeros))
+                
+        /* A função é encaminhada sem os parênteses para ela ser executada dentro do método sort para fazer a ordenação correta.*/
+
+        function ordenaNumeros(a, b)  {
+            return a - b
+            //Possibilidades de retorno
+            // < 0 ordenado antes de B
+            // > 0 ordenado antes de A
+            // == a ordem é mantida
+            // Se houver um valor string dentro
+            // do array, dará um erro
+                } 
+/* mais um exemplo de função de callback
+Além disso repare a característica de parâmetro variáveltambém neste caso, a ausência de função de callback implica no comportamento padrão que é a ordenação alfabética.*/
+    </script>
+</body>
+</html>

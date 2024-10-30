@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Factory</title>
+</head>
+<body>
+
+    <h1>Funções Factory</h1>
+    <h2>Através do padrão de projeto <span style="color: red;">Factory</span> nós podemos implementar uma "Fábrica" para criação dos nossos objetos em tempo de execução. Basicamente falando, em Javascript, as funções Factory combinam a chamada de funções com o retorno de objetos literais, que podem ser criados com base em parâmetros que são passados pra essas respectivas funções.</h2>
+    <h2 style="color: red;">
+        Funções Factory servem para criação de objetos de forma dinâmica, ou em tempo de execução, porque basta
+        chamar a função, passando ou não parâmetros, para termos o retorno de um objeto.
+    </h2>
+
+    <h3 style="color: blue;">
+        Obs: se essa informações fossem originadas de um banco de dados, nós teríamos que fazer uma requisição <span style="color: red;">HTTP</span> para algum servidor, esse servidor iria processar essa requisição e na sequência daria uma resposta <span style="color: red;">HTTP</span> para nós com um <span style="color: red;">JASON</span> anexado a resposta, que seria convertido dentro da aplicação também por um objeto literal, e a partir dai iríamos customizando estes parâmetros, mas isso seria impraticavel, por isso as funções Factory são utilizadas.
+    </h3>
+
+    <script>
+        //Requisição HTTP
+        //Resposta HTTP
+        //Criando uma coleção de bicicletas
+      let Bicicleta1 = {
+        cor: 'Verde',
+        modelo: 'Caloi',
+        marcha: 'única',
+        aro: 12,
+        pedalar() {
+            console.log('Estou pedalando!')
+        }
+      }
+
+        //Novo objeto
+
+        let Bicicleta2 = {
+        cor: 'Branco',
+        modelo: 'Monark',
+        marcha: '18',
+        aro: 26,
+        pedalar() {
+            console.log('Estou pedalando!')
+        }
+      }
+     
+      
+      console.log(Bicicleta1)
+      console.log(Bicicleta2)
+
+
+//---------------------------------------------
+        /*Obs: exemplo com uma função Factory*/
+        // Local para lógica para fazer as requisições
+        //Requisição HTTP
+        //Resposta HTTP
+
+        /*Obs: sempre que chamarmos está função ela
+        retornará um objeto que será constituido a
+        partir destas instruções, então precisaríamos
+        ficar repitindo código*/
+
+        /*Os parâmetros dentro da função são pra deixar ela dinâmica.*/
+        let BicicletaFactory = function(cor,modelo, marcha, aro){
+            return {
+                 cor,
+                 modelo,
+                 marcha,
+                 aro,
+                pedalar() {
+            console.log('Estou pedalando!')
+            }
+        }
+    }
+
+    //Criando instâncias diferentes do mesmo objeto
+    let bicicleta3 =  new BicicletaFactory('Vinho', 'Cicles', '12', 29)
+    console.log(bicicleta3)
+
+    
+    let bicicleta4 =  new BicicletaFactory('Preto', 'Importada', '18', 26)
+    console.log(bicicleta4)
+
+    let bicicleta5 =  new BicicletaFactory('Bege', 'Nacional', '21', 29)
+    console.log(bicicleta5)
+
+    </script>
+    
+</body>
+</html>
